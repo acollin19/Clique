@@ -1,0 +1,112 @@
+.container {
+    width:100%;
+    overflow-y: scroll;
+}
+
+.header {
+    background: rgb(0, 0, 0);
+    padding: 10px 10px 8px 10px;
+    position:fixed;
+    width: 100%;
+    top:0;
+    justify-content: space-between;
+}
+.header::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.logo1 {
+float: left;
+}
+
+.nav {
+float: right;
+}
+
+.nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+
+}
+
+.nav li {
+display: inline-block;
+margin-left: 30px;
+padding-top: 20px;
+position: relative;
+margin-right: 15px;
+}
+
+.nav a {
+color: rgb(151, 150, 150);
+text-decoration: none;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+.nav a:hover {
+color: rgb(255, 255, 255);
+}
+
+.nav a::before {
+content: '';
+display: block;
+height: 5px;
+background-color: #444;
+
+position: absolute;
+top: 0;
+width: 0%;
+
+transition: all ease-in-out 200ms;
+}
+
+.nav a:hover::before {
+width: 100%;
+}
+
+.button {
+    background-color: rgb(131, 127, 127);
+    border: none;
+    padding: 5px 8px 0px 5px;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 11px;
+    transform: translateY(-35%);
+}
+
+.active, .button:hover {
+    background-color: rgb(176, 176, 176);
+    text-decoration: rgb(153, 149, 156);
+}
+
+.button {border-radius: 12px;}
+
+.body {
+    display: flex;
+    align-items: center; 
+    background-image: linear-gradient(#454444,white);
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+    font-weight: 300;
+    min-height: 100vh;
+    
+}
+
+.footer {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+    position: fixed;
+    height: 50px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: black;
+    background-color: inherit;
+    bottom: 0;
+    text-align: center;
+    padding-top: 10px;
+}

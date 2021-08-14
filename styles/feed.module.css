@@ -1,0 +1,162 @@
+.container {
+    width: 100%;  
+    overflow-y: scroll;
+  }
+  
+.header {
+  background: rgb(5, 5, 5);
+  padding: 10px 10px 10px 10px;
+  position:fixed;
+  width:100%;
+  top:0%;
+  z-index: 1;
+
+}
+
+.header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo1 {
+float: left;
+}
+
+.nav {
+float: right;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 20px;
+  position: relative;
+  margin-right: 15px;
+}
+
+.nav a {
+  color: rgb(151, 150, 150);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top:0;
+  width: 0%;
+
+  transition: all ease-in-out 200ms;
+}
+
+.nav a:hover::before {
+width: 100%;
+}
+
+.body {
+  list-style: none;
+  margin-top:80px;
+  display: inline-flexbox;
+  background-image: linear-gradient(#454444,white);
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+  Bitstream Vera Sans Mono, Courier New, monospace;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+.title {
+  margin-left: 20px;
+  width:100%;
+  background-color: #000;
+  color: #e7dada;
+  
+}
+
+.bold {
+  font-size:xx-large;
+  margin-bottom: 25px;
+  font-weight:bold;
+  transform: translateY(15px);
+  text-align: center;
+  font-family: Courier New, monospace;
+  background-color: white;
+  margin-left:250px;
+  width: 65%;
+}
+
+.row { 
+  display: flex;
+  flex-wrap: wrap;
+  padding:0 9px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button {
+  background-color: #cdcdcd;
+  background: none;
+  border-style: none;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+
+.active, .button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.footer {
+position: fixed;
+height: 50px;
+width: 100%;
+background-color: #454444;
+bottom: 0;
+text-align: center;
+padding-top: 10px;
+
+}

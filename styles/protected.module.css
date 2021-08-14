@@ -1,0 +1,130 @@
+.container {
+    width: 100%;  
+    overflow-y: scroll;
+}
+   
+.header {
+    background: rgb(0, 0, 0);
+    padding: 10px 10px 10px 10px;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+.header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+}
+
+.nav {
+    float: right;   
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.nav li {
+    display: inline-block;
+    margin-left: 30px;
+    padding-top: 20px;
+    position: relative;
+    margin-right: 15px;
+}
+
+.nav a {
+    color: rgb(151, 150, 150);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 200ms;
+}
+
+.nav a:hover::before {
+    width: 100%;
+}
+
+.button {
+    background-color: rgb(131, 127, 127);
+    border: none;
+    padding: 5px 8px 0px 5px;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 11px;
+    transform: translateY(-35%);
+}
+
+.button:hover{
+    background-color: palevioletred;
+    cursor: pointer;
+}
+  
+.button {border-radius: 16px;}
+
+
+.body { 
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    background: linear-gradient(#454444,white);
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+    font-weight: 300;
+    min-height: 100vh;
+    flex-direction: column; 
+    top:80px;
+}
+
+.body p{
+    margin:250px 0 0 150px;
+    font-size: large;
+}
+
+.button2{
+    border-radius: 12px;
+    padding: 10px 0 10px 5px;
+    background-color: rgb(131, 127, 127);
+    margin-right:20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button2:hover{
+    background-color: palevioletred;
+    cursor: pointer;
+}
+
+
+.footer {
+    text-align: center;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+    background-color:inherit;
+    color: black;
+    position: fixed;
+    bottom:0;
+    width:100%;
+}

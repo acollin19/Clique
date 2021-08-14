@@ -1,0 +1,155 @@
+.container {
+    width: 100%;  
+    overflow-y: scroll;
+}
+
+
+.header {
+  background: rgb(0, 0, 0);
+  padding: 10px 10px 10px 10px;
+  position:fixed;
+  width: 100%;
+  top:0;
+}
+.header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo1 {
+  float: left;
+}
+
+.nav {
+  float: right;
+ }
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 20px;
+  position: relative;
+  margin-right: 15px;
+}
+
+.nav a {
+  color: rgb(151, 150, 150);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+  
+  transition: all ease-in-out 200ms;
+}
+
+.nav a:hover::before {
+  width: 100%;
+}
+
+.body {
+  padding: 0 0 100px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(#454444,white);
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+  Bitstream Vera Sans Mono, Courier New, monospace;
+  font-weight: 300;
+  min-height: 100vh;
+  margin-top: 90px;
+}
+
+.body h3 {
+  font-size:xx-large;
+  margin-bottom: 20px;
+  font-weight:bold;
+  color: white;
+}
+
+.body quote {
+  position: fixed;
+  text-align: center;
+  color:rgb(253, 197, 197);
+  left:10%;
+  top:300px;
+}
+
+.card {
+  margin: 2rem;
+  position:fixed;
+  padding: 1.5rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: 400px;
+  color: #000;
+  transform: translateX(110px) translateY(-30px); 
+}
+.card2 {
+  margin: 2rem;
+  position:fixed;
+  padding: 1.5rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: 400px;
+  transform: translateX(540px) translateY(-30px);
+  color: #000;
+}
+  
+.card:hover,
+.card:focus,
+.card:active {
+color: #ffffff;
+border-color: #000000;
+}
+
+.card2:hover,
+.card2:focus,
+.card2:active {
+color: #ffffff;
+border-color: #000000;
+}
+  
+.card p {
+margin: 0;
+font-size: 1.5rem;
+line-height: 1.5;
+}
+
+.footer {
+position: fixed;
+height: 50px;
+left: 0;
+right: 0;
+width: 100%;
+color: black;
+background-color: inherit;
+bottom: 0;
+text-align: center;
+}
