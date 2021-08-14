@@ -52,7 +52,7 @@ export default function Home() {
           <nav className={styles.nav}>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/Creator/creatorhome">Influencer</Link></li>
+              <li><Link href="/Creator/creatorhome">Creator</Link></li>
               <li><Link href="/feed">Feed</Link></li> 
               <li><Link href="/learnmore">Learn More</Link></li>
             </ul>
@@ -60,15 +60,25 @@ export default function Home() {
       </header>
 
       <body className={styles.body}>  
-      
-      <ImageSlider slides={SliderData}/>
-      
+        <ImageSlider slides={SliderData}/>
+        <div className={styles.bar}>
+          
+          <a>I-Q</a>
+          <a>R-Z</a>
+          <div className={styles.dropdown}>
+            <button className="dropbtn"> A-H
+              <i className="fa fa-caret-down"></i>
+          </button>
+          <div className={styles.dropdownContent}>
+            <a> Addison Rae </a>
+            <a> Charli Damelio</a>
+          </div>
+          </div>
+        </div>
       </body>
-      
       <footer className={styles.footer}>
-        <a>Clique By Angele</a>
+        
       </footer>
-      
     </container>
   )
 }

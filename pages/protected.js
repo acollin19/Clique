@@ -110,7 +110,7 @@ return (
           <nav className={styles.nav}>
               <ul>
                   <li><Link href="/">Home</Link></li>
-                  <li><Link href="/Creator/creatorhome">Influencer</Link></li>
+                  <li><Link href="/Creator/creatorhome">Creator</Link></li>
                   <li><Link href="/feed">Feed</Link></li> 
                   <li><Link href="/learnmore">Learn More</Link></li>
               </ul>

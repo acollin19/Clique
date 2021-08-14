@@ -45,7 +45,7 @@ export default function LearnMore() {
           <nav className={styles.nav}>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/Creator/creatorhome">Influencer</Link></li>
+              <li><Link href="/Creator/creatorhome">Creator</Link></li>
               <li><Link href="/feed">Feed</Link></li> 
               <li><Link href="/learnmore">Learn More</Link></li>
             </ul>
@@ -54,19 +54,22 @@ export default function LearnMore() {
 
       <body className={styles.body}>
       <h1 className={styles.h1}> New to NFT's? Here's What You Need to Know!</h1>
-        <div className={styles.div}> 
-            <h2> Where To Start?</h2>
-              <a> All you need to do to <i>Sign In</i> is connect your <a href="https://metamask.io/"> Metamask Wallet.</a> If you dont have Metamask installed, open a chrome brower and download the extension onto your browser. Once installed just press the connect to Metamask button on the top left and you're set to go. Simple as that!</a> 
-            <h2> Metamask?</h2>
-              <a> Metamask is a crypto wallet that allows you to buy and sell different types of coins, nfts, etc. on the Ethereum Blockchain.</a> 
-            <h2> What is an NFT? </h2> 
-              <a>text</a>
-            <h2> What is Clique?</h2>
-              <a> Fanjoy X Opensea. Clique is an easy and simple way to buy merch from your favourite influencers!</a> 
-            <h2> What is an NFT? </h2>
-              <a> An NFT is a digital asset that represents real-world objects such as art, music, avatars, videos, etc!</a>
-            <h2> How Can NFT's be Used? </h2> 
-              <a> Insert Text </a>
+        <div classnam={styles.border}>
+          <div className={styles.div}> 
+              <h2> Where To Start?</h2>
+                <a> Welcome to <b>Clique</b>! All you need to do in order to Sign In is connect your <a href="https://metamask.io/"/> <i>Metamask Wallet. Your wallet allows you to buy or create NFTs - depending on whether you are a creator or a collector!</i></a> 
+              <h2> Metamask?</h2>
+                <a> Metamask is a crypto wallet that allows you to store, buy and sell different types of coins, nfts, etc. on the Ethereum Blockchain. If you dont have Metamask installed, open a chrome brower and download the extension onto your browser. Once installed just press the connect to Metamask button on the top left and you're set to go. Simple as that!.</a> 
+              <h2> What is an NFT? </h2> 
+                <a>text</a>
+              <h2> What is Clique?</h2>
+                <a> Fanjoy X Opensea. Clique is an easy and simple way to buy merch from your favourite influencers!</a> 
+              <h2> What is an NFT? </h2>
+                <a> An NFT is a digital asset that represents real-world objects such as art, music, avatars, videos, etc!</a>
+              <h2> How Can NFT's be Used? </h2> 
+                <a> Insert Text </a>
+              <h2> </h2>
+          </div>
         </div>
         
 

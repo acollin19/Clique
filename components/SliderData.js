@@ -1,14 +1,17 @@
 export const SliderData = [
     {
-        image: 'https://www.nba.com/blazers/sites/blazers/files/21nft_featureimage_600x400_v1.png'
+        image: 'https://cdn.shopify.com/s/files/1/0714/1079/collections/Riley_NewHeader2020_2500x695_20de5a1b-eaf5-4e10-a364-9079c27b8ff5_1600x.jpg?v=1617986741'
     },
     {
-        image: 'https://imgur.com/15Mg3de'
+        image: 'https://cdn.shopify.com/s/files/1/0714/1079/collections/Avani_FirstLaunch_CollectionHeader_19f9dd8f-7546-4238-b0c7-45d46d11b365_1600x.jpg?v=1620406549'
     },
     {
-        image: 'https://m.economictimes.com/thumb/msid-81970886,width-1200,height-900,resizemode-4,imgsize-1042692/nft-non-fungible-token_istock.jpg'
+        image: 'https://cdn.shopify.com/s/files/1/0714/1079/collections/AddisonEasterling_Debut_CollectionHeader_1600x.jpg?v=1616183348'
     },
     {
-        image: 'https://miro.medium.com/max/1000/1*0mLSAsD2yTxFKDMAtVE4bg.png'
+        image: 'https://cdn.shopify.com/s/files/1/0714/1079/collections/Unfiltered-CollectionHeader_1400x.jpg?v=1600707016'
+    },
+    {
+        image: 'https://cdn.shopify.com/s/files/1/0714/1079/collections/Tyler-Cameron_NewHeader2020_2500x695_bc58a8f2-0851-43a1-930e-2730a586241d_1200x.jpg?v=1615571609'
     }
 ]

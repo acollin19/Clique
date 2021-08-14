@@ -9,12 +9,14 @@ const ImageSlider = ({ slides }) => {
     const length = slides.length;
 
     const nextSlide =() => {
-        setCurrent ( current === length - 1 ? 0 : current + 1 );
+        setCurrent( current === length - 1 ? 0 : current + 1 );
     };
 
     const prevSlide =() => {
-        setCurrent ( current === 0 ? length - 1 : current - 1 );
+        setCurrent( current === 0 ? length - 1 : current - 1 );
     }
+
+    console.log(current);
 
     if(!Array.isArray(slides) || slides.length <= 0) {
         return null;
@@ -27,7 +29,10 @@ const ImageSlider = ({ slides }) => {
             {SliderData.map((slide,index) => {
                 return ( 
                 <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                    <img src={slide.image} alt="pics" className={styles.image}/>;
+                    {index === current && (
+                    <img src={slide.image} alt="pics" className={styles.image}/>
+                    )}
+                    
                 </div>
 
                 )
