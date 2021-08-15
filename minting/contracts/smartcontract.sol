@@ -41,7 +41,7 @@ contract CliqueMint is ERC721, Ownable {
 
     function safeMint(address to, string memory uri)
         public
-        onlyOwner
+        
         returns (uint256)
     {
         require(_tokenIds.current() + 1 <= cap(), "ERC721: cap exceeded");
