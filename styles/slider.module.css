@@ -1,0 +1,45 @@
+.slider {
+    position: relative;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image {
+    width:100%;
+    height:500px;
+    border-radius:0px;
+
+}
+
+.rightarrow {
+    position: absolute;
+    top: 50%;
+    right:32px;
+    font-size: 3rem;
+    color: #000;
+    z-index:1;
+    cursor: pointer;
+    user-select: none ;
+}
+
+.leftarrow {
+    position: absolute;
+    top: 50%;
+    left:32px;
+    font-size: 3rem;
+    color: #000;
+    z-index:1;
+    cursor: pointer;
+    user-select: none ;
+}
+
+.rightarrow:hover{
+    color:white;
+}
+
+.leftarrow:hover{
+    color:white;
+}

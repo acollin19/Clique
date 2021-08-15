@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import { SliderData } from '../components/SliderData';
 import {FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-import styles from '../styles/Home.module.css';
-import { arrayTypeAnnotation } from 'babel-types';
+import styles from '../styles/slider.module.css';
 
 const ImageSlider = ({ slides }) => {
     const [current, setCurrent] = useState(0);

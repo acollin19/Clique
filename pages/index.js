@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import Link from 'next/link';
 import { verifyMessage } from "@ethersproject/wallet";
 import { useWeb3React } from "@web3-react/core";
 import Account from "../components/Account";
@@ -49,7 +49,12 @@ export default function Home() {
           </button>
         </a>
         
-          <nav className={styles.nav}>
+      </header>
+
+      <body className={styles.body}>  
+        <ImageSlider slides={SliderData}/>
+
+        <nav className={styles.nav}>
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/Creator/creatorhome">Creator</Link></li>
@@ -57,27 +62,10 @@ export default function Home() {
               <li><Link href="/learnmore">Learn More</Link></li>
             </ul>
           </nav>
-      </header>
-
-      <body className={styles.body}>  
-        <ImageSlider slides={SliderData}/>
-        <div className={styles.bar}>
           
-          <a>I-Q</a>
-          <a>R-Z</a>
-          <div className={styles.dropdown}>
-            <button className="dropbtn"> A-H
-              <i className="fa fa-caret-down"></i>
-          </button>
-          <div className={styles.dropdownContent}>
-            <a> Addison Rae </a>
-            <a> Charli Damelio</a>
-          </div>
-          </div>
-        </div>
       </body>
       <footer className={styles.footer}>
-        
+        <a>Clique</a>
       </footer>
     </container>
   )
