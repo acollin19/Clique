@@ -67,7 +67,7 @@ const buy = async() => {
   const signer = provider.getSigner()
   
   const abiAddress = CliqueMint.abi;
-  const contractAddress = "0xA028dAB372d58db3F50cE52957d80ef704143c1d";
+  const contractAddress = "0x0EACdb407b6fACcc9771e867CEaEA6dd2DDdF457";
   const contract = new ethers.Contract(contractAddress, abiAddress, signer);
 
   const myAddress = await signer.getAddress();
