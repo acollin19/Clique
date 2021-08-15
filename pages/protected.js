@@ -122,16 +122,14 @@ return (
       <p className={styles.p}>Click on the "Choose File" button to upload the file you would like to turn into an NFT:<br></br>
         
         <form onSubmit={handleSubmit}>
-            <label> Select File to Upload</label><br></br>
+            <label> Step 1: Select File to Upload</label><br></br>
             <input className={styles.button2} type="file" onChange={handleFileChange}/>
-
-            <input className={styles.button2} type="text" />
             <input className={styles.button2} type="submit" value="Upload Image" onClick={message}/>
                  
-        </form>
+        </form><br></br>
 
           <label> Step 2: Click to Mint your NFT</label><br></br>
-          <input type="button" onClick={buy} value="Mint NFT"/>
+          <input className={styles.button2} type="button" onClick={buy} value="Mint NFT"/>
 
       </p>
 
