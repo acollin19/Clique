@@ -1,7 +1,6 @@
 import Head from "next/head"
 import Link from "next/link"
 import styles from '../styles/protected.module.css'
-import { verifyMessage } from "@ethersproject/wallet";
 import { useWeb3React } from "@web3-react/core";
 import Account from "../components/Account";
 import useEagerConnect from "../hooks/useEagerConnect";
@@ -12,9 +11,9 @@ import CreatorHome from "./Creator/creatorhome"
 import { useState } from 'react';
 import { addImage, uploadIPFS } from "../utils/firebaseUpload";
 import {ethers} from "ethers";
-import mintNFT from "../minting/scripts/mint-nfts";
 import CliqueMint from "../minting/artifacts/contracts/smartcontract.sol/CliqueMint.json";
 import { BigNumber } from "bignumber.js";
+import dynamic from 'next/dynamic'
 
 export default function Protected({ hasReadPermission }) {
 
@@ -31,6 +30,10 @@ const sign = usePersonalSign();
 
 const isConnected = typeof account === "string" && !!library;
 
+//Metadata Info
+//const name = document.getElementById("Name").value;
+//const description = document.getElementById("Description").value;
+
 //Protected Page
 const router = useRouter()
 if (!hasReadPermission) {
@@ -40,15 +43,21 @@ if (!hasReadPermission) {
 
 //Upload 
 const handleSubmit = async(e) => {
-    console.log("test works");
     e.preventDefault();
     const url = await addImage(selectedFile);
-    const ipfs = await uploadIPFS(url);
+    //const ipfs = await uploadIPFS(url, name, description);
+    const ipfs = await uploadIPFS(url, );
     setIpfsUrl(ipfs)
 
-    console.log("ipfs link", ipfs);
+    console.log("metadata link", ipfs);
+    console.log("picture link", url);
+    
+    nftToken.push(url);
+    console.log(nftToken);
 
-}    
+}   
+
+
 const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0])
 }
@@ -59,6 +68,16 @@ const message = () => {
     } else {
         alert ("Upload unsuccesful, try again");
     }
+}
+
+
+const nftToken = ["url1"];
+
+const nftList = async(nftURL, nftArray) => {
+  nftArray.push(nftURL)
+
+  console.log("hi", nftArray);
+
 }
 
 //Minting 
@@ -76,20 +95,23 @@ const buy = async() => {
   let tokenId = null;
 
   try {
-
-    tokenId = BigNumber.from(await contract.safeMint(myAddress, ipfsUrl, 
+    //tokenId = BigNumber.from(
+    await contract.safeMint(myAddress, ipfsUrl, 
       { gasLimit: ethers.utils.hexlify(250000), 
         gasPrice: ethers.utils.parseUnits('5', "gwei") 
-      },));
-      console.log(tokenId);
+      },);
+    // pushing selected file input into the array
+    nftList(handleSubmit.url, nftToken);
+    
+      //console.log("this is tokenID", tokenId);
 
   } catch (error){
     console.log(error);
   };
 
-  //
+
   // let info = await contract.tokenURI(tokenId);
-  // console.log("this is info", info);
+  // console.log("this is info", tokenId);
 }
 
 return (
@@ -124,12 +146,18 @@ return (
         <form onSubmit={handleSubmit}>
             <label> Step 1: Select File to Upload</label><br></br>
             <input className={styles.button2} type="file" onChange={handleFileChange}/>
+            <label for="Name">Name:</label>
+            <input type="text" id="Name"/><br></br>
+            <label for="Description">Image Description:</label>
+            <input type="text" id="Description"/><br></br>
             <input className={styles.button2} type="submit" value="Upload Image" onClick={message}/>
+            
                  
         </form><br></br>
 
           <label> Step 2: Click to Mint your NFT</label><br></br>
           <input className={styles.button2} type="button" onClick={buy} value="Mint NFT"/>
+
 
       </p>
 

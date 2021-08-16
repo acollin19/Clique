@@ -28,7 +28,6 @@ export default function Home() {
   };
 
   const isConnected = typeof account === "string" && !!library;
-  
 
   
   return (
@@ -62,7 +61,7 @@ export default function Home() {
               <li><Link href="/learnmore">Learn More</Link></li>
             </ul>
           </nav>
-          
+
       </body>
       <footer className={styles.footer}>
         <a>Clique</a>

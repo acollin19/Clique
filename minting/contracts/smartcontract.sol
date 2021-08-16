@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+
 contract CliqueMint is ERC721, Ownable {
     using Counters for Counters.Counter;
     using Strings for uint256;
@@ -39,9 +40,10 @@ contract CliqueMint is ERC721, Ownable {
         return _tokenURI;
     }
 
+    string[] nftTokens;
+
     function safeMint(address to, string memory uri)
         public
-        
         returns (uint256)
     {
         require(_tokenIds.current() + 1 <= cap(), "ERC721: cap exceeded");
@@ -49,6 +51,7 @@ contract CliqueMint is ERC721, Ownable {
         uint256 newItemId = _tokenIds.current();
         _safeMint(to, newItemId);
         _setTokenURI(newItemId, uri);
+
         return newItemId;
     }
 
