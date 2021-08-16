@@ -21,6 +21,9 @@ export default function Protected({ hasReadPermission }) {
 const [ selectedFile, setSelectedFile ] = useState(null);
 const [ ipfsUrl, setIpfsUrl ] = useState(null);
 
+let [Name, setName] = useState("");
+let [Description, setDescription] = useState("");
+
 //Metamask
 const { account, library } = useWeb3React();
 
@@ -45,9 +48,10 @@ if (!hasReadPermission) {
 const handleSubmit = async(e) => {
     e.preventDefault();
     const url = await addImage(selectedFile);
-    //const ipfs = await uploadIPFS(url, name, description);
-    const ipfs = await uploadIPFS(url, );
+    const ipfs = await uploadIPFS(url, Name, Description);
+    //const ipfs = await uploadIPFS(url, );
     setIpfsUrl(ipfs)
+
 
     console.log("metadata link", ipfs);
     console.log("picture link", url);
@@ -147,9 +151,9 @@ return (
             <label> Step 1: Select File to Upload</label><br></br>
             <input className={styles.button2} type="file" onChange={handleFileChange}/>
             <label for="Name">Name:</label>
-            <input type="text" id="Name"/><br></br>
+            <input type="text" id="Name" value={Name} onChange={e => setName(e.target.value)}/><br></br>
             <label for="Description">Image Description:</label>
-            <input type="text" id="Description"/><br></br>
+            <input type="text" id="Description" value={Description} onChange={e => setDescription(e.target.value)}/><br></br>
             <input className={styles.button2} type="submit" value="Upload Image" onClick={message}/>
             
                  
