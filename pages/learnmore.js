@@ -61,13 +61,11 @@ export default function LearnMore() {
               <h2> Metamask?</h2>
                 <a> Metamask is a crypto wallet that allows you to store, buy and sell different types of coins, nfts, etc. on the Ethereum Blockchain. If you dont have Metamask installed, open a chrome brower and download the extension onto your browser. Once installed just press the connect to Metamask button on the top left and you're set to go. Simple as that!.</a> 
               <h2> What is an NFT? </h2> 
-                <a>text</a>
+                <a>Think of the Mona Lisa - it's a physical asset thats worth a lot of money. The same goes for NFTs, they're digital assets that generally come if the shape of art, music, game items and videos! They can be sold and traded online with cryptocurrency rather than the regular dollar that you might be familiar with. You might be asking why someone would buy a digital item that you cant even hold. Well, like the Mona Lisa, each NFT is unique, wouldnt you want to own an item from your favourite artist (or Influencer!) that nobody else has?  </a>
               <h2> What is Clique?</h2>
                 <a> Fanjoy X Opensea. Clique is an easy and simple way to buy merch from your favourite influencers!</a> 
-              <h2> What is an NFT? </h2>
-                <a> An NFT is a digital asset that represents real-world objects such as art, music, avatars, videos, etc!</a>
               <h2> How Can NFT's be Used? </h2> 
-                <a> Insert Text </a>
+                <a> The use of NFTs are growing as it becomes more popular. As of right now, they can be used as avatar characters, game items, or simply a piece of art that you want to display.</a>
               <h2> </h2>
           </div>
         </div>

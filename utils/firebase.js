@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
 
+
 var firebaseConfig = {
   apiKey: "AIzaSyCO__d0ZevYj_heN1OkgICJcyfs01Ear-w",
   authDomain: "clique-52833.firebaseapp.com",
@@ -19,8 +20,6 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 
 }
-
-
 
 const firestoreRef = firebase.firestore();
 const firebaseStorageRef = firebase.storage();

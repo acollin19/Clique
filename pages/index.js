@@ -60,11 +60,11 @@ export default function Home() {
               <li><Link href="/feed">Feed</Link></li> 
               <li><Link href="/learnmore">Learn More</Link></li>
             </ul>
-          </nav>
+        </nav>
 
       </body>
       <footer className={styles.footer}>
-        <a>Clique</a>
+        <a></a>
       </footer>
     </container>
   )

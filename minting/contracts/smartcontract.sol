@@ -52,6 +52,7 @@ contract CliqueMint is ERC721, Ownable {
         _safeMint(to, newItemId);
         _setTokenURI(newItemId, uri);
 
+
         return newItemId;
     }
 

@@ -9,11 +9,11 @@ import Image from "next/image";
 import { useRouter } from "next/router"
 import CreatorHome from "./Creator/creatorhome"
 import { useState } from 'react';
-import { addImage, uploadIPFS } from "../utils/firebaseUpload";
+import { addImage, uploadIPFS, dataFile } from "../utils/firebaseUpload";
 import {ethers} from "ethers";
 import CliqueMint from "../minting/artifacts/contracts/smartcontract.sol/CliqueMint.json";
 import { BigNumber } from "bignumber.js";
-import dynamic from 'next/dynamic'
+
 
 export default function Protected({ hasReadPermission }) {
 
@@ -33,11 +33,8 @@ const sign = usePersonalSign();
 
 const isConnected = typeof account === "string" && !!library;
 
-//Metadata Info
-//const name = document.getElementById("Name").value;
-//const description = document.getElementById("Description").value;
 
-//Protected Page
+//Protected Pages
 const router = useRouter()
 if (!hasReadPermission) {
   
@@ -49,18 +46,19 @@ const handleSubmit = async(e) => {
     e.preventDefault();
     const url = await addImage(selectedFile);
     const ipfs = await uploadIPFS(url, Name, Description);
-    //const ipfs = await uploadIPFS(url, );
     setIpfsUrl(ipfs)
 
 
     console.log("metadata link", ipfs);
     console.log("picture link", url);
     
-    nftToken.push(url);
-    console.log(nftToken);
+    //nftList(url, nftToken);
+
+    dataFile(url);
+    console.log("list of urls", dataFile(url));
+
 
 }   
-
 
 const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0])
@@ -74,13 +72,12 @@ const message = () => {
     }
 }
 
-
 const nftToken = ["url1"];
 
 const nftList = async(nftURL, nftArray) => {
-  nftArray.push(nftURL)
+  const x = nftArray.push(nftURL)
 
-  console.log("hi", nftArray);
+  console.log("hi", x.value);
 
 }
 
@@ -105,7 +102,7 @@ const buy = async() => {
         gasPrice: ethers.utils.parseUnits('5', "gwei") 
       },);
     // pushing selected file input into the array
-    nftList(handleSubmit.url, nftToken);
+    //nftList(handleSubmit.url, nftToken);
     
       //console.log("this is tokenID", tokenId);
 
@@ -119,7 +116,7 @@ const buy = async() => {
 }
 
 return (
-  <div>
+  <container className={styles.container}>
     <Head>
       <title>Influencer Exclusive</title>
     </Head>
@@ -145,13 +142,13 @@ return (
 
     <body className={styles.body}>
 
-      <p className={styles.p}>Click on the "Choose File" button to upload the file you would like to turn into an NFT:<br></br>
+      <p className={styles.p}>Welcome to the NFT minting page. Click on the "Choose File" button to upload the file you would like to turn into an NFT:<br></br><br></br>
         
         <form onSubmit={handleSubmit}>
-            <label> Step 1: Select File to Upload</label><br></br>
-            <input className={styles.button2} type="file" onChange={handleFileChange}/>
+            <label> <b>Step 1:</b> Select File to Upload</label><br></br>
+            <input className={styles.button2} type="file" onChange={handleFileChange}/><br></br><br></br>
             <label for="Name">Name:</label>
-            <input type="text" id="Name" value={Name} onChange={e => setName(e.target.value)}/><br></br>
+            <input type="text" id="Name" value={Name} onChange={e => setName(e.target.value)}/><br></br><br></br>
             <label for="Description">Image Description:</label>
             <input type="text" id="Description" value={Description} onChange={e => setDescription(e.target.value)}/><br></br>
             <input className={styles.button2} type="submit" value="Upload Image" onClick={message}/>
@@ -159,7 +156,7 @@ return (
                  
         </form><br></br>
 
-          <label> Step 2: Click to Mint your NFT</label><br></br>
+          <label> <b>Step 2:</b> Click to Mint your NFT</label><br></br>
           <input className={styles.button2} type="button" onClick={buy} value="Mint NFT"/>
 
 
@@ -172,7 +169,8 @@ return (
         <a> Back to home </a> 
       </Link>   
     </footer>
-  </div>
+
+  </container>
 
 )
 }

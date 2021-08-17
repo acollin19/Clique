@@ -1,10 +1,11 @@
 .container {
     width: 100%;  
     overflow-y: scroll;
+    background-image: linear-gradient(#383636,white);
 }
   
 .header {
-background: rgb(0, 0, 0);
+
 padding: 10px 10px 0px 10px;
 position:fixed;
 width:100%;
@@ -42,7 +43,7 @@ margin-right: 15px;
 }
 
 .nav a {
-color: rgb(151, 150, 150);
+color: #7c7a7a;
 text-decoration: none;
 text-transform: uppercase;
 font-size: 14px;
@@ -56,7 +57,7 @@ color: rgb(255, 255, 255);
     content: '';
     display: block;
     height: 5px;
-    background-color: #444;
+    background-color: black;
     position: absolute;
     top: 0;
     width: 0%;
